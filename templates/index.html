@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}予定一覧{% endblock %}
+
+{% block content %}
+<h2>あなたの予定</h2>
+<a href="{{ url_for('add_event') }}" class="btn btn-success mb-3">新しい予定を追加</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>日付</th>
+      <th>説明</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for event in events %}
+    <tr>
+      <td>{{ event.title }}</td>
+      <td>{{ event.date }}</td>
+      <td>{{ event.description }}</td>
+      <td>
+        <a href="{{ url_for('edit_event', event_id=event.id) }}" class="btn btn-sm btn-primary">編集</a>
+        <a href="{{ url_for('delete_event', event_id=event.id) }}" class="btn btn-sm btn-danger">削除</a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="4">予定がありません。</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}新しいイベントの追加{% endblock %}
+
+{% block content %}
+<h2>新しいイベントを追加する</h2>
+<form action="{{ url_for('add_event') }}" method="POST">
+  <div class="form-group">
+    <label for="title">タイトル:</label>
+    <input type="text" id="title" name="title" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="date">日付 (例: YYYY-MM-DD):</label>
+    <input type="text" id="date" name="date" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="description">説明:</label>
+    <textarea id="description" name="description" class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">追加する</button>
+</form>
+{% endblock %}

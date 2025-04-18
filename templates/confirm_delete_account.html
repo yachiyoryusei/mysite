@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}アカウント削除の確認{% endblock %}
+
+{% block content %}
+<h2>アカウント削除の確認</h2>
+<p>本当にアカウントを削除しますか？<br>
+この操作は元に戻せず、登録しているすべてのイベントも削除されます。</p>
+
+<form action="{{ url_for('delete_account') }}" method="POST">
+    <!-- 削除確認ボタン -->
+    <button type="submit" class="btn btn-danger">アカウントを削除する</button>
+    <!-- キャンセルボタンはトップページなどへのリンク -->
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">キャンセル</a>
+</form>
+{% endblock %}
