@@ -319,7 +319,9 @@
 # zict==2.1.0
 # zipp @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b279673d-f037-44c7-8773-c5a6b6f51037d3wfr9cq/croots/recipe/zipp_1652341773612/work
 # zope.interface @ file:///opt/concourse/worker/volumes/live/8c2d4bd1-6406-47f0-45ce-890992bafbf6/volume/zope.interface_1625036159007/work
-Flask==3.1.0
+Flask==3.0.2
 Flask-Login==0.6.3
 Flask-SQLAlchemy==3.1.1
+Werkzeug==3.0.1
 gunicorn==21.2.0
+
