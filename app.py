@@ -144,7 +144,11 @@ def delete_account():
     # GETリクエストの場合は確認ページを表示
     return render_template('confirm_delete_account.html')
 
+import os
+
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  # まだテーブルが作成されていなければ作成
-    app.run(host='0.0.0.0', port=10000)
+        db.create_all()
+    port = int(os.environ.get("PORT", 8080))  # PORT環境変数からポート取得（なければ8080）
+    app.run(host="0.0.0.0", port=port)
+
